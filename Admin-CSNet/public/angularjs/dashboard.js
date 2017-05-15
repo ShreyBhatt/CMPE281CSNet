@@ -20,21 +20,21 @@ dashboard.controller('dashboard', function($scope, $http){
             Highcharts.chart('container', {
 
                 title: {
-                    text: 'Top 10 properties with their revenue'
+                    text: 'Top 10 Services with usage'
                 },
 
                 xAxis: {
                     title: {
-                        text:'Properties'
+                        text:'Services'
                     },
                    //categories: ["33 South", "101 San Fernando", "Pascio Plaza", "355 Serrano Drive", "Casa Baloni", "The Weekend", "Holiday Inn", "Radisson Blu", "Legacy Fountain"]
-                     categories: [result.propertyName[0], result.propertyName[1], result.propertyName[2], result.propertyName[3], result.propertyName[4], result.propertyName[5], result.propertyName[6], result.propertyName[7], result.propertyName[8], result.propertyName[9]]
+                     categories: ["Printing", "Lab Access", "Library", "PC Access", "Projector Access", "IEEE Subscription", "International Student Service", "Practical Service", "Dining Service", "Learning Material Service"]
                 },
 
                 series: [{
                     type: 'column',
                     colorByPoint: true,
-                    data: [result.revenue[0], result.revenue[1], result.revenue[2], result.revenue[3], result.revenue[4], result.revenue[5], result.revenue[6], result.revenue[7], result.revenue[8], result.revenue[9]],
+                    data: [48, 24, 63, 20, 52, 76, 13, 62, 45, 32],
                     showInLegend: false
                 }]
 
@@ -96,21 +96,30 @@ dashboard.controller('dashboard', function($scope, $http){
             Highcharts.chart('container1', {
 
                     title: {
-                        text: 'Top 10 cities with their revenue'
+                        text: 'Top 10 nodes with their services'
                     },
 
                     xAxis: {
                         title: {
-                            text:'Cities'
+                            text:'Nodes'
                         },
-                        categories: [result[0]._id , result[1]._id , result[2]._id, result[3]._id, result[4]._id, result[5]._id, result[6]._id, result[7]._id, result[8]._id, result[9]._id]
+                        categories: ["Node Lib41", "Node Lab126", "Node Lib12", "Node CMPE32", "Node EE82", "Node SU8", "Node SE55", "Node CS39", "Node Lib81", "Node SE69"]
                         //, result[1]._id , result[2]._id, result[3]._id, result[4]._id, result[5]._id, result[6]._id, result[7]._id, result[8]._id, result[9]._id
                     },
 
                     series: [{
                         type: 'column',
                         colorByPoint: true,
-                        data: [result[0].revenue, result[1].revenue , result[2].revenue,result[3].revenue  , result[4].revenue, result[5].revenue, result[6].revenue, result[7].revenue, result[8].revenue, result[9].revenue],
+                        data: [22,
+                            67,
+                            18,
+                            85,
+                            83,
+                            94,
+                            52,
+                            31,
+                            93,
+                            58],
                         showInLegend: false
                      // , result[1].revenue , result[2].revenue,result[3].revenue  , result[4].revenue, result[5].revenue, result[6].revenue, result[7].revenue, result[8].revenue, result[9].revenue
                     }]
@@ -140,21 +149,25 @@ console.log($scope.topTenHost);
             Highcharts.chart('container2', {
 
                 title: {
-                    text: 'Top 10 hosts with their revenue'
+                    text: 'Cluster Activity'
                 },
 
                 xAxis: {
                     title: {
-                        text:'Hosts'
+                        text:'Clusters'
                     },
-                    categories: [result.hostName[0], result.hostName[1], result.hostName[2], result.hostName[3], result.hostName[4], result.hostName[5], result.hostName[6], result.hostName[7], result.hostName[8], result.hostName[9]]
+                    categories: ["Library", "Software Engineering", "Aerospace Engineering", "Nuclear Engineering,", "Student Union"]
                     //categories: ["Adrian Brady", "Juan Pinzon", "Rakesh Shah", "Xiaoyu Zhou", "Chris Pratt", "Juliann Moore", "Steve Austin", "Salmaan Pelhari", "Stacy Roberts"]
                 },
 
                 series: [{
                     type: 'column',
                     colorByPoint: true,
-                    data: [result.revenue[0], result.revenue[1], result.revenue[2], result.revenue[3], result.revenue[4], result.revenue[5], result.revenue[6], result.revenue[7], result.revenue[8], result.revenue[9]],
+                    data: [15,
+                        7,
+                        40,
+                        71,
+                        92],
                   //  data: [2334, 5434, 2123, 1232, 10394, 3942, 5678, 11234, 4530],
                     showInLegend: false
                 }]
