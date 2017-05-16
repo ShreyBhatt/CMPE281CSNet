@@ -4,7 +4,7 @@ var ObjectId = require('mongodb').ObjectId;
 var mongoose = require('mongoose');
 
 exports.getAllProperties = function (req, res, next) {
-    "use strict";
+
     var response = [];
     Property
         .find({isApproved: true, isAvailable: true})
@@ -14,7 +14,7 @@ exports.getAllProperties = function (req, res, next) {
                 console.log(err);
             }
             else {
-                for (let i = 0; i < results.length; i++) {
+                for (var i = 0; i < results.length; i++) {
                     if (results[i].hostId.isApproved) {
                         response.push(results[i]);
                     }
