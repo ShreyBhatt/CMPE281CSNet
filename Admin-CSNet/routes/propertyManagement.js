@@ -14,7 +14,7 @@ exports.getAllProperties = function (req, res, next) {
                 console.log(err);
             }
             else {
-                for (var i = 0; i < results.length; i++) {
+                for (let i = 0; i < results.length; i++) {
                     if (results[i].hostId.isApproved) {
                         response.push(results[i]);
                     }
