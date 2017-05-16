@@ -71,6 +71,12 @@ app.get('/addCluster', adminManagement.viewAddClusterPage);
 app.get('/addService', adminManagement.viewAddServicePage);
 app.post('/admin_add', adminManagement.addAdmin);
 app.post('/deleteBill', invoiceManagement.deleteBill);
+app.get('/getNodes', adminManagement.getNodes);
+app.get('/getClusters', adminManagement.getClusters);
+app.get('/getServices', adminManagement.getServices);
+app.post('/postNode', adminManagement.postNodes);
+app.post('/postCluster', adminManagement.postCluster);
+app.post('/postService', adminManagement.postService);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     var err = new Error('Not Found');

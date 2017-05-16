@@ -45,7 +45,7 @@
     </script>
     <script src="angularjs/userManagement.js"></script>
 </head>
-<body ng-app="userManagementapp" ng-controller="userManagement" ng-init="getAllUsers();">
+<body ng-app="userManagementapp" ng-controller="userManagement" ng-init="getAllUsers();getServices()">
 
 <header id="topnav"
         class="navbar navbar-midnightblue navbar-fixed-top clearfix"
@@ -171,19 +171,25 @@
                                                         <thead>
                                                         <tr>
                                                             <th>
-                                                                <a href="#" ng-click="sortName = 'firstName'; sortReverse = !sortReverse">Name
+                                                                <a href="#" ng-click="sortName = 'firstName'; sortReverse = !sortReverse">Service ID
                                                                     <span class="fa fa-caret-down" ng-show="!sortReverse"></span>
                                                                     <span class="fa fa-caret-up" ng-show="sortReverse"></span>
                                                                 </a>
                                                             </th>
                                                             <th>
-                                                                <a href="#" ng-click="sortName = 'lastName'; sortReverse = !sortReverse">Service ID
+                                                                <a href="#" ng-click="sortName = 'lastName'; sortReverse = !sortReverse">Service Name
                                                                     <span class="fa fa-caret-down" ng-show="!sortReverse"></span>
                                                                     <span class="fa fa-caret-up" ng-show="sortReverse"></span>
                                                                 </a>
                                                             </th>
                                                             <th>
-                                                                <a href="#" ng-click="sortName = 'age'; sortReverse = !sortReverse">Node ID
+                                                                <a href="#" ng-click="sortName = 'age'; sortReverse = !sortReverse">Associated Cluster
+                                                                    <span class="fa fa-caret-down" ng-show="!sortReverse"></span>
+                                                                    <span class="fa fa-caret-up" ng-show="sortReverse"></span>
+                                                                </a>
+                                                            </th>
+                                                            <th>
+                                                                <a href="#" ng-click="sortName = 'age'; sortReverse = !sortReverse">Associated Node
                                                                     <span class="fa fa-caret-down" ng-show="!sortReverse"></span>
                                                                     <span class="fa fa-caret-up" ng-show="sortReverse"></span>
                                                                 </a>
@@ -198,11 +204,12 @@
                                                         </thead>
                                                         <tbody>
                                                         <!--<tr ng-repeat="x in user |orderBy:sortName:sortReverse|filter: searchUserTerm">-->
-                                                        <tr ng-repeat="i in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]">
+                                                        <tr ng-repeat="service in services">
 
-                                                            <td>Service {{i}}</td>
-                                                            <td>{{i}}</td>
-                                                            <td>1</td>
+                                                            <td>{{service.id}}</td>
+                                                            <td>{{service.name}}</td>
+                                                            <td>{{service.cluster}}</td>
+                                                            <td>{{service.node}}</td>
                                                             <td><input type="button" class="btn btn-success" value="View" >
                                                                 <input type="button" class="btn btn-danger" value="Delete" onclick="scheme()" >
                                                                 </td>

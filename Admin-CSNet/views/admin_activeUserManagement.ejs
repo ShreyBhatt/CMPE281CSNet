@@ -45,7 +45,7 @@
     </script>
     <script src="angularjs/userManagement.js"></script>
 </head>
-<body ng-app="userManagementapp" ng-controller="userManagement" ng-init="getAllUsers();">
+<body ng-app="userManagementapp" ng-controller="userManagement" ng-init="getAllUsers();getClusters()">
 
 <header id="topnav"
         class="navbar navbar-midnightblue navbar-fixed-top clearfix"
@@ -171,19 +171,25 @@
                                                         <thead>
                                                         <tr>
                                                             <th>
-                                                                <a href="#" ng-click="sortName = 'firstName'; sortReverse = !sortReverse">Name
+                                                                <a href="#" ng-click="sortName = 'firstName'; sortReverse = !sortReverse">Cluster ID
                                                                     <span class="fa fa-caret-down" ng-show="!sortReverse"></span>
                                                                     <span class="fa fa-caret-up" ng-show="sortReverse"></span>
                                                                 </a>
                                                             </th>
                                                             <th>
-                                                                <a href="#" ng-click="sortName = 'lastName'; sortReverse = !sortReverse">Nodes
+                                                                <a href="#" ng-click="sortName = 'lastName'; sortReverse = !sortReverse">Cluster Name
                                                                     <span class="fa fa-caret-down" ng-show="!sortReverse"></span>
                                                                     <span class="fa fa-caret-up" ng-show="sortReverse"></span>
                                                                 </a>
                                                             </th>
                                                             <th>
-                                                                <a href="#" ng-click="sortName = 'age'; sortReverse = !sortReverse">Services
+                                                                <a href="#" ng-click="sortName = 'age'; sortReverse = !sortReverse">Cluster Nodes
+                                                                    <span class="fa fa-caret-down" ng-show="!sortReverse"></span>
+                                                                    <span class="fa fa-caret-up" ng-show="sortReverse"></span>
+                                                                </a>
+                                                            </th>
+                                                            <th>
+                                                                <a href="#" ng-click="sortName = 'age'; sortReverse = !sortReverse">Cluster Services
                                                                     <span class="fa fa-caret-down" ng-show="!sortReverse"></span>
                                                                     <span class="fa fa-caret-up" ng-show="sortReverse"></span>
                                                                 </a>
@@ -198,24 +204,17 @@
                                                         </thead>
                                                         <tbody>
                                                         <!--<tr ng-repeat="x in user |orderBy:sortName:sortReverse|filter: searchUserTerm">-->
-                                                        <tr>
+                                                        <tr ng-repeat="cluster in clusters">
 
-                                                            <td>San Jose State University</td>
-                                                            <td>25</td>
-                                                            <td >50</td>
+                                                            <td>{{cluster.id}}</td>
+                                                            <td>{{cluster.name}}</td>
+                                                            <td >{{cluster.nodes}}</td>
+                                                            <td >{{cluster.services}}</td>
                                                             <td><input type="button" class="btn btn-success" value="View" >
                                                                 <input type="button" class="btn btn-danger" value="Delete" onclick="scheme()" >
                                                             </td>
                                                         </tr>
-                                                        <tr>
-
-                                                            <td>Santa Clara University</td>
-                                                            <td>25</td>
-                                                            <td >50</td>
-                                                            <td><input type="button" class="btn btn-success" value="View" >
-                                                                <input type="button" class="btn btn-danger" value="Delete" onclick="scheme()" >
-                                                            </td>
-                                                        </tr>
+                                                        
                                                         </tbody>
                                                     </table>
                                                 </div>

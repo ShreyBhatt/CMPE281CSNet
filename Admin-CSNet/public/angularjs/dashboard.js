@@ -4,7 +4,56 @@
 var dashboard = angular.module('dashboardapp',['nvd3']);
 dashboard.controller('dashboard', function($scope, $http){
 
+    $scope.postNode = function(id, name, cluster, services){
+        console.log("called");
+        $http({
+            method:'post',
+            url:'/postNode',
+            data:{
+                "id":id,
+                "name": name,
+                "cluster": cluster,
+                "services": services
+            }
+        }).success(function(data){
+            console.log(data);
 
+        })
+    };
+
+    $scope.postCluster = function(id, name, nodes, services){
+        console.log("called");
+        $http({
+            method:'post',
+            url:'/postCluster',
+            data:{
+                "id":id,
+                "name": name,
+                "nodes": nodes,
+                "services": services
+            }
+        }).success(function(data){
+            console.log(data);
+
+        })
+    };
+
+    $scope.postService = function(id, name, cluster, node){
+        console.log("called");
+        $http({
+            method:'post',
+            url:'/postService',
+            data:{
+                "id":id,
+                "name": name,
+                "cluster": cluster,
+                "node": node
+            }
+        }).success(function(data){
+            console.log(data);
+
+        })
+    };
 
     $scope.topTenProperties = function(){
 

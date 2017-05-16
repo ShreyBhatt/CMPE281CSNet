@@ -8,6 +8,37 @@ var userManagement = angular.module('userManagementapp',[]);
 userManagement.controller('userManagement', function ($scope, $http) {
 
 
+    $scope.getNodes = function(){
+        $http({
+            method:'get',
+            url:'/getNodes'
+        }).success(function(data){
+            console.log("Getting all the users " + data);
+            $scope.nodes=data;
+            console.log($scope.nodes);
+        })
+    };
+    $scope.getServices = function(){
+        $http({
+            method:'get',
+            url:'/getServices'
+        }).success(function(data){
+            console.log("Getting all the users " + data);
+            $scope.services=data;
+            console.log($scope.services);
+        })
+    };
+    $scope.getClusters = function(){
+        $http({
+            method:'get',
+            url:'/getClusters'
+        }).success(function(data){
+            console.log("Getting all the users " + data);
+            $scope.clusters=data;
+            console.log($scope.clusters);
+        })
+    };
+
     $scope.getAllUsers = function(){
         console.log("This gets called");
         $http({

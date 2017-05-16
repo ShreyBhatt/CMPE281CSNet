@@ -141,20 +141,17 @@
             <div class="bodycont">
               <form id="login-form" method="post" role="form" ng-submit="addAdmin()">
 
-                <p><input type="text" class="txtbox" placeholder="Service ID" ng-model="email"></p>
+                <p><input type="text" class="txtbox" placeholder="Service ID" ng-model="id"></p>
 
-                <p><input type="text" class="txtbox" placeholder="Service Name" ng-model="password"></p>
+                <p><input type="text" class="txtbox" placeholder="Service Name" ng-model="name"></p>
                 <p><input type="text" class="txtbox" placeholder="Cluster ID" ng-model="cluster"></p>
                 <p><input type="text" class="txtbox" placeholder="Node ID" ng-model="node"></p>
 
 
 
-                <p><input type="text" class="txtbox" placeholder="Number of Instances" ng-model="lastName"></p>
-
-
 
                 <div class="form-group col-md-6">
-                  <button onclick="scheme(password)" type="submit" class="btn-login" name="login-button">Add Service</button>
+                  <button ng-click="postService(id, name, cluster, node)" type="submit" class="btn-login" name="login-button">Add Service</button>
 
 
                 </div>

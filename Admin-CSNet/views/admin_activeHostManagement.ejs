@@ -45,7 +45,7 @@
     </script>
     <script src="angularjs/userManagement.js"></script>
 </head>
-<body ng-app="userManagementapp" ng-controller="userManagement" ng-init="getAllUsers();">
+<body ng-app="userManagementapp" ng-controller="userManagement" ng-init="getAllUsers();getNodes()">
 
 <header id="topnav"
         class="navbar navbar-midnightblue navbar-fixed-top clearfix"
@@ -171,13 +171,19 @@
                                                         <thead>
                                                         <tr>
                                                             <th>
-                                                                <a href="#" ng-click="sortName = 'firstName'; sortReverse = !sortReverse">Name
+                                                                <a href="#" ng-click="sortName = 'firstName'; sortReverse = !sortReverse">Node ID
                                                                     <span class="fa fa-caret-down" ng-show="!sortReverse"></span>
                                                                     <span class="fa fa-caret-up" ng-show="sortReverse"></span>
                                                                 </a>
                                                             </th>
                                                             <th>
-                                                                <a href="#" ng-click="sortName = 'lastName'; sortReverse = !sortReverse">Node ID
+                                                                <a href="#" ng-click="sortName = 'lastName'; sortReverse = !sortReverse">Name
+                                                                    <span class="fa fa-caret-down" ng-show="!sortReverse"></span>
+                                                                    <span class="fa fa-caret-up" ng-show="sortReverse"></span>
+                                                                </a>
+                                                            </th>
+                                                            <th>
+                                                                <a href="#" ng-click="sortName = 'age'; sortReverse = !sortReverse">Cluster
                                                                     <span class="fa fa-caret-down" ng-show="!sortReverse"></span>
                                                                     <span class="fa fa-caret-up" ng-show="sortReverse"></span>
                                                                 </a>
@@ -198,11 +204,12 @@
                                                         </thead>
                                                         <tbody>
                                                         <!--<tr ng-repeat="x in user |orderBy:sortName:sortReverse|filter: searchUserTerm">-->
-                                                        <tr ng-repeat="i in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]">
+                                                        <tr ng-repeat="node in nodes">
 
-                                                            <td>Node {{i}}</td>
-                                                            <td>{{i}}</td>
-                                                            <td>1</td>
+                                                            <td>Node {{node.id}}</td>
+                                                            <td>{{node.name}}</td>
+                                                            <td>{{node.cluster}}</td>
+                                                            <td>{{node.services}}</td>
                                                             <td><input type="button" class="btn btn-success" value="View" >
                                                                 <input type="button" class="btn btn-danger" value="Delete" onclick="scheme()" >
                                                             </td>
