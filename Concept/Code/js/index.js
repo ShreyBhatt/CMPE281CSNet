@@ -15,20 +15,20 @@ var colors = d3.scale.category20();
 var nodes = [
       { name: "SJSU"},
       { name: "Engineering", target: [0], value: 58 },
-      { name: "Art and History", target: [0, 1], value: 65 },  
-      { name: "University Library", target: [0, 1, 2], value: 52 },
-      { name: "Creative Arts", target: [0, 3], value: 48 }, 
-      { name: "Computer Engg", target: [0,3,4], value: 44 }, 
-      { name: "Design", target: [0,3,4,5], value: 36 },
-      { name: "Social Work", target: [0, 1, 2], value: 52 },
-      { name: "Food Science", target: [0, 1, 2, 8], value: 37 },
-      { name: "Undergraduate", target: [0,1,2], value: 50 },
-      { name: "Nutrition", target: [0,1,2,3,9], value: 67 },
-      { name: "Nursing", target: [0,1,2,3,4,5,6,7,8,10], value: 68 },
-      { name: "Geology", target: [0,1,2,7,8 ], value: 16 },
-      { name: "Film", target: [0,1,2,7,8], value: 25 },
-      { name: "Literature", target: [0,1,2,3,4,5,6,7,8,9,10,11,12], value: 45 },
-      { name: "Journalism", target: [0,1,2,7,8], value: 25 }
+      { name: "University Library", target: [0, 1], value: 65 },  
+      { name: "Nutrition", target: [0, 1, 2], value: 52 },
+      { name: "Public Chat", target: [0, 3], value: 48 }, 
+      { name: "Events", target: [0,3,4,5], value: 36 },
+      { name: "Nursing", target: [0,3,4,5], value: 42 }
+      //{ name: "Social Work", target: [0, 1, 2], value: 52 },
+      //{ name: "Food Science", target: [0, 1, 2, 8], value: 37 },
+      //{ name: "Undergraduate", target: [0,1,2], value: 50 },
+      //{ name: "Nutrition", target: [0,1,2,3,9], value: 67 },
+      //{ name: "Nursing", target: [0,1,2,3,4,5,6,7,8,10], value: 68 },
+      //{ name: "Geology", target: [0,1,2,7,8 ], value: 16 },
+      //{ name: "Film", target: [0,1,2,7,8], value: 25 },
+      //{ name: "Literature", target: [0,1,2,3,4,5,6,7,8,9,10,11,12], value: 45 },
+      //{ name: "Journalism", target: [0,1,2,7,8], value: 25 }
 ];
 
 var links = [];
@@ -149,11 +149,23 @@ var force = d3.layout.force()
           {
             window.location.replace("services.html");
           }
-
           if(d.name == "Nutrition")
           {
             window.location.replace("nutrition.html");
           }
+          if(d.name == "University Library")
+          {
+            window.location.replace("library.html");
+          }
+          if(d.name == "Public Chat")
+          {
+            window.location.replace("chat.html");
+          }
+          if(d.name == "Events")
+          {
+            window.location.replace("events.html");
+          }
+        
           
         });
 
