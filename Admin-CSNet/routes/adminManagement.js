@@ -15,6 +15,18 @@ exports.viewAddNodePage = function (req, res, next) {
     res.render('add_node');
 };
 
+exports.viewAddClusterPage = function (req, res, next) {
+
+
+    res.render('add_cluster');
+};
+
+exports.viewAddServicePage = function (req, res, next) {
+
+
+    res.render('add_service');
+};
+
 
 exports.addAdmin = function (req, res, next) {
 

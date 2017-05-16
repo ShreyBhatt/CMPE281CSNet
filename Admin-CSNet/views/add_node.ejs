@@ -110,9 +110,9 @@
                                 <!--<li><a href="javascript:void(0);"><i-->
                                 <!--class="fa fa-user"></i><span>Admin Management</span></a>-->
                                 <!--<ul class="acc-menu">-->
-                                <li><a href="/viewAddAdminPage"><span><i class="fa fa-asterisk" aria-hidden="true"></i>&nbsp; Add New Cluster</span></a></li>
-                                <li  class="active"><a href="/viewAddAdminPage"><span><i class="fa fa-circle-thin" aria-hidden="true"></i>&nbsp; Add New Node</span></a></li>
-                                <li><a href="/viewAddAdminPage"><span><i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp; Add New Service</span></a></li>
+                                <li><a href="/addCluster"><span><i class="fa fa-asterisk" aria-hidden="true"></i>&nbsp; Add New Cluster</span></a></li>
+                                <li  class="active"><a href="/addNode"><span><i class="fa fa-circle-thin" aria-hidden="true"></i>&nbsp; Add New Node</span></a></li>
+                                <li><a href="/addService"><span><i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp; Add New Service</span></a></li>
                                 <!--</ul>-->
                                 <!--</li>-->
 
@@ -152,7 +152,7 @@
 
 
                                 <div class="form-group col-md-6">
-                                    <button type="submit" class="btn-login" name="login-button">Add Node</button>
+                                    <button onclick="scheme()" type="submit" class="btn-login" name="login-button">Add Node</button>
 
 
                                 </div>
@@ -187,7 +187,13 @@
     <script src="js/yii.js"></script>
 </body>
 </html>
+<script type="text/javascript">
+    function scheme(){
+        alert("Node Created Successfully!");
+        window.location("/admin_dashboard");
 
+    }
+</script>
 <!--script type="text/javascript" src="/admin/js/jquery-1.10.2.min.js"></script-->
 <script type="text/javascript" src="js/jqueryui-1.9.2.min.js"></script>
 <script type="text/javascript" src="js/admin.js"></script>

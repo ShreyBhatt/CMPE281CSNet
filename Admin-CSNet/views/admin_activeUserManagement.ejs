@@ -55,7 +55,7 @@
                     data-toggle="tooltips" data-placement="right" title="Toggle Sidebar"><span
                         class="icon-bg"><i class="fa fa-fw fa-bars"></i> </span> </a>
 		</span>
-    <a href="" style="font-size:18px;color:#ffffff;float: left;height:50px;padding:15px;line-height:20px;">Airbnb Admin Panel</a>
+    <a href="" style="font-size:18px;color:#ffffff;float: left;height:50px;padding:15px;line-height:20px;">CSNET Dashboard</a>
     <ul class="nav navbar-nav toolbar pull-right">
 
 
@@ -81,11 +81,11 @@
                         <div class="widget-body welcome-box tabular">
                             <div class="tabular-row">
                                 <div class="tabular-cell welcome-avatar">
-                                    <a href="/admin/dashboard"><img src="images/admin.jpg" class="avatar"></a>
+                                    <a href="/admin_dashboard"><img src="images/admin.jpg" class="avatar"></a>
                                 </div>
                                 <div class="tabular-cell welcome-options">
                                     <span class="welcome-text">Welcome,</span>
-                                    <a href="/admin/dashboard" class="name">Admin</a>
+                                    <a href="/admin_dashboard" class="name">Admin</a>
                                 </div>
                             </div>
                         </div>
@@ -98,36 +98,31 @@
 
                                 <li><a href="/admin_dashboard"><span><i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp; Dashboard</span></a>
                                 </li>
-                                <li class="active"><a href="/admin_activeUserManagement"><span><i class="fa fa-users" aria-hidden="true"></i>&nbsp; User Management</span></a>
+                                <li class="active"><a href="/admin_activeUserManagement"><span><i class="fa fa-users" aria-hidden="true"></i>&nbsp; Cluster Management</span></a>
                                 </li>
 
                                 <!--<li><a href="javascript:void(0);"><i-->
                                 <!--class="fa fa-users"></i><span>Host Management</span></a>-->
                                 <!--<ul class="acc-menu">-->
                                 <li>
-                                    <a href="/admin_activeHostManagement"><span><i class="fa fa-user" aria-hidden="true"></i>&nbsp; Active Host Management</span></a>
+                                    <a href="/admin_activeHostManagement"><span><i class="fa fa-user" aria-hidden="true"></i>&nbsp; Node Management</span></a>
                                 </li>
-                                <li><a href="/admin_pendingHost"><span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp; Pending Host Requests</span></a></li>
-                                <!--</ul>-->
-                                <!--</li>-->
 
 
                                 <li>
-                                    <a href="/admin_activePropertyManagement"><span><i class="fa fa-bank" aria-hidden="true"></i>&nbsp; Active Property Management</span></a>
-                                </li>
-                                <li><a href="/admin_pendingProperty"><span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp; Pending Property Requests</span></a>
-                                </li>
+                                    <a href="/admin_activePropertyManagement"><span><i class="fa fa-bank" aria-hidden="true"></i>&nbsp; Service Management</span></a>
 
-                                <li><a href="/admin_invoiceManagement"><span><i class="fa fa-file" aria-hidden="true"></i>&nbsp; Invoice management</span></a>
                                 </li>
 
                                 <!--<li><a href="javascript:void(0);"><i-->
                                 <!--class="fa fa-user"></i><span>Admin Management</span></a>-->
                                 <!--<ul class="acc-menu">-->
-                                <li><a href="/viewAddAdminPage"><span><i class="fa fa-user" aria-hidden="true"></i>&nbsp; Add New Admin</span></a>
-                                </li>
+                                <li><a href="/addCluster"><span><i class="fa fa-asterisk" aria-hidden="true"></i>&nbsp; Add New Cluster</span></a></li>
+                                <li><a href="/addNode"><span><i class="fa fa-circle-thin" aria-hidden="true"></i>&nbsp; Add New Node</span></a></li>
+                                <li ><a href="/addService"><span><i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp; Add New Service</span></a></li>
                                 <!--</ul>-->
                                 <!--</li>-->
+
 
 
                             </ul>
@@ -143,7 +138,7 @@
 
                     <div class="page-heading">
                         <h1>
-                            User Management: Active Users						</h1>
+                            Cluster Management</h1>
                         <!--div class="options">
                             <div class="btn-toolbar">
                                 <a href="#" class="btn btn-default"><i
@@ -156,7 +151,7 @@
                             <div class="col-md-12">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h2>Manage Users</h2>
+                                        <h2>Manage Clusters</h2>
                                         <div class="panel-ctrls">
                                         </div>
                                     </div>
@@ -168,7 +163,7 @@
                                                         <div class="form-group well">
                                                             <div class="input-group">
                                                                 <div class="input-group-addon"><span class="fa fa-search"></span></div>
-                                                                <input type="text" class="form-control" ng-model="searchUserTerm" placeholder="Search user..."/>
+                                                                <input type="text" class="form-control" ng-model="searchUserTerm" placeholder="Search Clusters..."/>
                                                             </div>
                                                         </div>
                                                     </form>
@@ -182,13 +177,13 @@
                                                                 </a>
                                                             </th>
                                                             <th>
-                                                                <a href="#" ng-click="sortName = 'lastName'; sortReverse = !sortReverse">City
+                                                                <a href="#" ng-click="sortName = 'lastName'; sortReverse = !sortReverse">Nodes
                                                                     <span class="fa fa-caret-down" ng-show="!sortReverse"></span>
                                                                     <span class="fa fa-caret-up" ng-show="sortReverse"></span>
                                                                 </a>
                                                             </th>
                                                             <th>
-                                                                <a href="#" ng-click="sortName = 'age'; sortReverse = !sortReverse">State
+                                                                <a href="#" ng-click="sortName = 'age'; sortReverse = !sortReverse">Services
                                                                     <span class="fa fa-caret-down" ng-show="!sortReverse"></span>
                                                                     <span class="fa fa-caret-up" ng-show="sortReverse"></span>
                                                                 </a>
@@ -202,17 +197,33 @@
                                                         </tr>
                                                         </thead>
                                                         <tbody>
-                                                        <tr ng-repeat="x in user |orderBy:sortName:sortReverse|filter: searchUserTerm">
+                                                        <!--<tr ng-repeat="x in user |orderBy:sortName:sortReverse|filter: searchUserTerm">-->
+                                                        <tr>
 
-                                                            <td>{{x.firstName}} {{x.lastName}}</td>
-                                                            <td ng-bind="x.city"></td>
-                                                            <td ng-bind="x.state"></td>
-                                                            <td> <input type="button" class="btn btn-success" value="View" data-toggle="modal" ng-click="getUser(x._id);" data-target="#myModal" ></td>
+                                                            <td>San Jose State University</td>
+                                                            <td>25</td>
+                                                            <td >50</td>
+                                                            <td><input type="button" class="btn btn-success" value="View" >
+                                                                <input type="button" class="btn btn-danger" value="Delete" onclick="scheme()" >
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+
+                                                            <td>Santa Clara University</td>
+                                                            <td>25</td>
+                                                            <td >50</td>
+                                                            <td><input type="button" class="btn btn-success" value="View" >
+                                                                <input type="button" class="btn btn-danger" value="Delete" onclick="scheme()" >
+                                                            </td>
                                                         </tr>
                                                         </tbody>
                                                     </table>
                                                 </div>
-
+                                                <script>
+                                                    function scheme(){
+                                                        alert("Cluster Deleted, will be updated shortly");
+                                                    }
+                                                </script>
 
 
 
@@ -279,7 +290,7 @@
                     <footer role="contentinfo">
                         <div class="clearfix">
                             <ul class="list-unstyled list-inline pull-left">
-                                <li><h6 style="margin: 0;">&copy; 2016 Airbnb</h6></li>
+                                <li><h6 style="margin: 0;">&copy; 2017 CSNET</h6></li>
                             </ul>
                             <button class="pull-right btn btn-link btn-xs hidden-print"
                                     id="back-to-top">

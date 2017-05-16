@@ -110,9 +110,9 @@
                                 <!--<li><a href="javascript:void(0);"><i-->
                                 <!--class="fa fa-user"></i><span>Admin Management</span></a>-->
                                 <!--<ul class="acc-menu">-->
-                                <li><a href="/viewAddAdminPage"><span><i class="fa fa-asterisk" aria-hidden="true"></i>&nbsp; Add New Cluster</span></a></li>
-                                <li  class="active"><a href="/viewAddAdminPage"><span><i class="fa fa-circle-thin" aria-hidden="true"></i>&nbsp; Add New Node</span></a></li>
-                                <li><a href="/viewAddAdminPage"><span><i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp; Add New Service</span></a></li>
+                                <li class="active"><a href="/addCluster"><span><i class="fa fa-asterisk" aria-hidden="true"></i>&nbsp; Add New Cluster</span></a></li>
+                                <li><a href="/addNode"><span><i class="fa fa-circle-thin" aria-hidden="true"></i>&nbsp; Add New Node</span></a></li>
+                                <li><a href="/addService"><span><i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp; Add New Service</span></a></li>
                                 <!--</ul>-->
                                 <!--</li>-->
 
@@ -137,22 +137,22 @@
                     <div class="col-md-4">
 
                         <!--<div class="logincontain" style="">-->
-                        <div class="headercont" align="center"><b>Add New Node</b></div>
+                        <div class="headercont" align="center"><b>Add New Cluster</b></div>
                         <div class="bodycont">
                             <form id="login-form" method="post" role="form" ng-submit="addAdmin()">
 
-                                <p><input type="text" class="txtbox" placeholder="Node ID" ng-model="email"></p>
+                                <p><input type="text" class="txtbox" placeholder="Cluster ID" ng-model="email"></p>
 
                                 <p><input type="text" class="txtbox" placeholder="Name" ng-model="password"></p>
 
-                                <p><input type="text" class="txtbox" placeholder="Cluster ID" ng-model="firstName"></p>
+
 
                                 <p><input type="text" class="txtbox" placeholder="Number of Instances" ng-model="lastName"></p>
 
 
 
                                 <div class="form-group col-md-6">
-                                    <button type="submit" class="btn-login" name="login-button">Add Node</button>
+                                    <button onclick="scheme()" type="submit" class="btn-login" name="login-button">Add Cluster</button>
 
 
                                 </div>
@@ -263,7 +263,13 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 <script src="angularjs/adminManagement.js"></script>
 <body class="bg_gray1" style="background:#f8f8f8;" ng-app="adminManagement" ng-controller="admin">
+<script type="text/javascript">
+    function scheme(){
+        alert("Cluster Created Successfully!");
+        window.location("/admin_dashboard");
 
+    }
+</script>
 </div>
 </body>
 </html>
