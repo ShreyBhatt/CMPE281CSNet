@@ -9,6 +9,12 @@ exports.viewAddAdminPage = function (req, res, next) {
     res.render('add_admin');
 };
 
+exports.viewAddNodePage = function (req, res, next) {
+
+
+    res.render('add_node');
+};
+
 
 exports.addAdmin = function (req, res, next) {
 

@@ -66,6 +66,7 @@ app.post('/approveHost', hostManagement.approveHost);
 app.post('/admin_login', index.adminLogin);
 app.get('/admin_logout', index.adminLogout);
 app.get('/viewAddAdminPage', adminManagement.viewAddAdminPage);
+app.get('/viewAddNodePage', adminManagement.viewAddNodePage);
 app.post('/admin_add', adminManagement.addAdmin);
 app.post('/deleteBill', invoiceManagement.deleteBill);
 // catch 404 and forward to error handler
