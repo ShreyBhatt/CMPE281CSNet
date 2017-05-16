@@ -4,7 +4,7 @@ var User = require('../model/user');
 var mongoose = require('mongoose');
 
 exports.topTenProperties = function (req, res, next) {
-    "use strict";
+
     var flag = false;
     var response = {};
     response.propertyName = [];
@@ -15,7 +15,7 @@ exports.topTenProperties = function (req, res, next) {
         .limit(10)
         .exec(function (err, properties) {
 
-            for (let i = 0; i < properties.length; i++) {
+            for (var i = 0; i < properties.length; i++) {
                 Billing.aggregate([{
                     $match: {
                         propertyId: properties[i]._id
